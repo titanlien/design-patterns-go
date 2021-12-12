@@ -62,16 +62,16 @@ func (p *Persistence) saveToFile(j *Journal, filename string) {
 }
 
 
-func main_() {
+func main() {
 	j := Journal{}
 	j.AddEntry("I cried today.")
 	j.AddEntry("I ate a bug")
 	fmt.Println(strings.Join(j.entries, "\n"))
 
 	// separate function
-	SaveToFile(&j, "journal.txt")
+	SaveToFile(&j, "journal-s.txt")
 
 	//
 	p := Persistence{"\n"}
-	p.saveToFile(&j, "journal.txt")
+	p.saveToFile(&j, "journal-p.txt")
 }
