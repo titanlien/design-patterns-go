@@ -60,8 +60,8 @@ type Square2 struct {
 	size int
 }
 
-func (s *Square2) Rectangle() Rectangle {
-	return Rectangle{s.size, s.size}
+func (s *Square2) Rectangle() *Rectangle {
+	return &Rectangle{s.size, s.size}
 }
 
 func UseIt(sized Sized) {
@@ -79,4 +79,7 @@ func main() {
 
 	sq := NewSquare(5)
 	UseIt(sq)
+
+	sq2 := Square2{5}
+	UseIt(sq2.Rectangle())
 }
